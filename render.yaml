@@ -2,9 +2,10 @@ services:
   - type: web
     name: trade-vault-backend
     runtime: node
+    region: oregon
     plan: free
-    buildCommand: npm install && npx prisma generate && npx prisma db push
-    startCommand: npm start
+    buildCommand: cd backend && npm install && npx prisma generate && npx prisma db push
+    startCommand: cd backend && npm start
     envVars:
       - key: DATABASE_URL
         value: mongodb+srv://sajjadriaz51_db_user:jjQUydJ0nwfBKDTY@cluster0.t4e5uog.mongodb.net/TradeVault?retryWrites=true&w=majority
@@ -13,4 +14,12 @@ services:
       - key: NODE_ENV
         value: production
       - key: PORT
-        value: '5000'
+        value: '8000'
+      - key: ADMIN_EMAIL
+        value: v_master_99x_vault@secure-trade.io
+      - key: ADMIN_PASSWORD
+        value: TV_Master#Secure_99x!786
+      - key: PROMO_EMAIL
+        value: adnanali247@gmail.com
+      - key: PROMO_PASSWORD
+        value: Promote#2024!Trade
