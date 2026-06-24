@@ -1,0 +1,32 @@
+{
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "name": "Trade Vault Backend",
+  "description": "Elite Trading App Backend",
+  "repository": "https://github.com/ibrahimmeer855-coder/usdt-server",
+  "keywords": [
+    "trading",
+    "nodejs",
+    "express",
+    "mongodb"
+  ],
+  "env": {
+    "DATABASE_URL": {
+      "description": "MongoDB connection string",
+      "required": true
+    },
+    "JWT_SECRET": {
+      "description": "Secret key for JWT tokens",
+      "generator": "secret"
+    },
+    "NODE_ENV": {
+      "value": "production"
+    },
+    "PORT": {
+      "value": "5000"
+    }
+  }
+}
